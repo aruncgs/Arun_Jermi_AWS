@@ -42,14 +42,13 @@ function FilmsPage() {
     <div className="flex flex-col min-h-screen">
       <div className="bg-red-700">
         <Header />
-        <SearchComponent />
       </div>
       <div className="flex-grow">
-        <section className="bg-white">
+        <section className="bg-red-700">
           <div className="container mx-auto py-6">
             <div className="ml-14">
-              <h1 className="text-black text-3xl font-bold">Films</h1>
-              <div className="flex overflow-x-auto py-4 space-x-4">
+              <h1 className="text-white text-3xl font-bold ml-10">Films</h1>
+              <div className="flex overflow-x-auto py-6 space-x-4 ml-10">
                 {categories.map((category) => (
                   <button
                     key={category}
@@ -67,15 +66,14 @@ function FilmsPage() {
                   ))}
                 </div>
               ) : (
-                <div className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 p-4">
+                <div className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2 p-4 ml-8">
                   {displayedFilms.map((film) => (
                     <div key={film.id} className="max-w-sm rounded overflow-hidden shadow-lg" onClick={() => handleFilmClick(film)}>
                       <img className="w-full" src={film.imageUrl} alt={film.title} />
-                      <div className="px-6 py-4">
-                        <div className="font-bold text-xl mb-2">{film.title}</div>
-                        <p className="text-gray-700 text-base">{film.synopsis}</p>
-                        <p className="text-gray-600 text-sm">Rating: {film.rating}</p>
-                        <p className="text-gray-600 text-sm">Release Date: {film.releaseDate}</p>
+                      <div className="bg-red-700 px-6 py-4">
+                        <div className="text-white font-bold text-xl mb-2">{film.title}</div>
+                        <p className="text-white text-sm">Rating: {film.rating}</p>
+                        <p className="text-white text-sm">Release Date: {film.releaseDate}</p>
                       </div>
                     </div>
                   ))}

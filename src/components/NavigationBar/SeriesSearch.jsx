@@ -25,13 +25,13 @@ const SearchComponent = () => {
   };
 
   return (
-    <div className="flex flex-col items-center mt-5 relative">
+    <div className="flex flex-col items-end mr-10 relative">
       <input
         type="text"
-        placeholder="Recherchez une série..."
+        placeholder="Recherchez..."
         value={query}
         onChange={handleSearch}
-        className="p-2.5 w-72 bg-yellow-600 text-white border-2 border-yellow-700 rounded-md text-center focus:outline-none focus:ring-2 focus:ring-yellow-300 hover:bg-yellow-400 transition-colors duration-200 ease-in-out input-placeholder"
+        className="p-1.5 w-68 bg-yellow-600 text-white border-2 border-yellow-700 rounded-md text-center focus:outline-none focus:ring-2 focus:ring-yellow-300 hover:bg-yellow-400 transition-colors duration-200 ease-in-out input-placeholder"
       />
       <div className="absolute mt-2 w-80 bg-yellow-700 text-white rounded-lg shadow-lg overflow-hidden z-10 top-full">
         {query && results.length > 0 ? (

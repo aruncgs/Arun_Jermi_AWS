@@ -14,7 +14,6 @@ function Accueil() {
           <Header />
         </div>
         <div className="main-content">
-          <SearchComponent />
           <Section films={films.Watchlist} titre="Ma Watchlist" />
           <Section films={films.aLaUne} titre="À la une" />
           <Section films={films.Classiques} titre="Classiques" />

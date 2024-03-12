@@ -25,7 +25,6 @@ function FilmsPage() {
     <div className="flex flex-col min-h-screen">
       <div className="bg-red-700">
         <Header />
-        <SearchComponent />
       </div>
       <div className="flex-grow">
         <section className="bg-red-700">

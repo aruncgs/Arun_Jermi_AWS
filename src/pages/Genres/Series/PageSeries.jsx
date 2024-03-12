@@ -19,12 +19,11 @@ function Series() {
     <div className="flex flex-col min-h-screen">
       <div className="bg-yellow-600">
         <Header />
-        <SearchComponent />
       </div>
       <div className="flex-grow">
         <section className="bg-yellow-600">
           <div className="container mx-auto py-6">
-            <div className="ml-14">
+            <div className="ml-24">
             <h1 className="text-white text-3xl font-bold">Séries</h1>
             <div className="flex overflow-x-auto py-4 space-x-4">
               {categories.map((category) => (
