@@ -76,6 +76,8 @@ function Signup() {
         </div>
       </div>
     </div>
+
+    
     {/* Conteneur du contenu défilable */}
     <div className="relative bg-black">
         {/* Ici, vous pouvez placer le reste de votre page, comme des formulaires d'inscription, du texte, etc. */}
