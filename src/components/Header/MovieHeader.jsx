@@ -6,7 +6,6 @@ function Header() {
     <header className="bg-red-700 text-white p-4 flex justify-between items-center">
       <Link to="/" className="flex items-center">
         <img src={`${process.env.PUBLIC_URL}/images/WYW.png`} alt="Logo" className="h-10 mr-5"/>
-        <span>WHAT YOU WATCHED</span>
       </Link>
       <nav className="flex-grow mx-4">
         <ul className="flex justify-center space-x-4">
