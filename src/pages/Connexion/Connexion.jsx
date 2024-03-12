@@ -10,7 +10,7 @@ function Connexion() {
 
   return (
     <div className="flex h-screen">
-      <div className="w-1/2 bg-cover" style={{ backgroundImage: "url('BGConnexion.png')" }}></div>
+      <div className="w-1/2 bg-cover" style={{ backgroundImage: "url('/images/BGConnexion.png')" }}></div>
       <div className="w-1/2 flex flex-col items-center justify-center" style={{ backgroundColor: "#5d5d5d" }}>
         <div className="relative text-center mb-5">
           <Link to="/">

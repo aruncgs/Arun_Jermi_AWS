@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./styles.css";
 import "./tailwind.css";
 import Connexion from "./pages/Connexion/Connexion"; 
-import FilmsPage from "./pages/Genres/Films/PageFilms"; 
+import FilmsPage from "./pages/Genres/Films/Filmss"; 
 import Series from "./pages/Genres/Series/PageSeries"; 
 import Accueil from "./pages/Accueil/Accueil";
 import QCM from "./pages/Divers/Formulaire";
