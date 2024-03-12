@@ -1,9 +1,14 @@
-import React from "react";
+import React from 'react';
 
 function Signup() {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100">
+      {/* Logo qui sert de lien vers l'accueil, avec une taille ajustée */}
+      <a href="/">
+        <img src="/images/RondSansFond.png" alt="Logo" className="mb-7 w-24 h-24" />
+      </a>
       <div className="max-w-md w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        {/* Les autres éléments restent inchangés */}
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
             Nom d'utilisateur
@@ -12,7 +17,7 @@ function Signup() {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="username"
             type="text"
-            placeholder="Nom d'utilisateur"
+            placeholder="UserName"
           />
         </div>
         <div className="mb-4">
@@ -23,7 +28,7 @@ function Signup() {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="email"
             type="email"
-            placeholder="Email"
+            placeholder="example@wyw.fr"
           />
         </div>
         <div className="mb-6">
