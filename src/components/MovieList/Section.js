@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import FilmsItem from "../MovieCard/FilmsItem";
+import MovieCard from "../MovieCard/FilmsItem";
 import "../../styles.css";
 
 const Section = ({ titre, films }) => {
@@ -30,7 +30,7 @@ const Section = ({ titre, films }) => {
         }}
       >
         {films.map((film) => (
-          <FilmsItem
+          <MovieCard
             key={film.id}
             film={film}
             onClick={() => setSelectedFilm(film)}

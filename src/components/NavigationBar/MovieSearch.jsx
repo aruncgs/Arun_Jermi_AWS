@@ -25,7 +25,7 @@ const SearchComponent = () => {
   };
 
   return (
-    <div className="flex flex-col items-center mt-5">
+    <div className="flex flex-col items-center mt-5 relative">
       <input
         type="text"
         placeholder="Recherchez un film..."
@@ -33,7 +33,7 @@ const SearchComponent = () => {
         onChange={handleSearch}
         className="p-2.5 w-72 bg-red-700 text-white border-2 border-red-900 rounded-md text-center focus:outline-none focus:ring-2 focus:ring-red-500 hover:bg-red-600 transition-colors duration-200 ease-in-out input-placeholder"
       />
-      <div className="mt-2 w-80 bg-red-900 text-white rounded-lg shadow-lg overflow-hidden">
+      <div className="absolute mt-2 w-80 bg-red-900 text-white rounded-lg shadow-lg overflow-hidden z-10 top-full">
         {query && results.length > 0 ? (
           results.map((film) => (
             <div
