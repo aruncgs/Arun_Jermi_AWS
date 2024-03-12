@@ -8,6 +8,7 @@ import Series from "./pages/Genres/Series/PageSeries";
 import Accueil from "./pages/Accueil/Accueil";
 import QCM from "./pages/Divers/Formulaire";
 import Evenement from "./pages/Divers/Evenement";
+import Signup from "./pages/Inscription/Inscription";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/series" element={<Series />} />
           <Route path="/qcm" element={<QCM />} />
           <Route path="/Evenement" element={<Evenement />} />
+          <Route path="/Inscription" element={<Signup />} />
         </Routes>
         {/* Vous pouvez ajouter plus de sections ou de contenu ici */}
     </Router>

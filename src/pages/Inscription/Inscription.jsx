@@ -1,143 +1,53 @@
-import {
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-} from "firebase/auth";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import BackgroundImage from "./components/BackgroundImage";
-import Header from "../components/Header";
-import { firebaseAuth } from "../utils/firebase-config";
+import React from "react";
+
 function Signup() {
-  const [showPassword, setShowPassword] = useState(false);
-  const [formValues, setFormValues] = useState({
-    email: "",
-    password: "",
-  });
-  const navigate = useNavigate();
-
-  const handleSignIn = async () => {
-    try {
-      const { email, password } = formValues;
-      await createUserWithEmailAndPassword(firebaseAuth, email, password);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  onAuthStateChanged(firebaseAuth, (currentUser) => {
-    if (currentUser) navigate("/");
-  });
-
   return (
-    <Container showPassword={showPassword}>
-      <BackgroundImage />
-      <div className="content">
-        <Header login />
-        <div className="body flex column a-center j-center">
-          <div className="text flex column">
-            <h1>Unlimited movies, TV shows and more.</h1>
-            <h4>Watch anywhere. Cancel anytime.</h4>
-            <h6>
-              Ready to watch? Enter your email to create or restart membership.
-            </h6>
-          </div>
-          <div className="form">
-            <input
-              type="email"
-              placeholder="Email address"
-              onChange={(e) =>
-                setFormValues({
-                  ...formValues,
-                  [e.target.name]: e.target.value,
-                })
-              }
-              name="email"
-              value={formValues.email}
-            />
-            {showPassword && (
-              <input
-                type="password"
-                placeholder="Password"
-                onChange={(e) =>
-                  setFormValues({
-                    ...formValues,
-                    [e.target.name]: e.target.value,
-                  })
-                }
-                name="password"
-                value={formValues.password}
-              />
-            )}
-            {!showPassword && (
-              <button onClick={() => setShowPassword(true)}>Get Started</button>
-            )}
-          </div>
-          {showPassword && <button onClick={handleSignIn}>Log In</button>}
+    <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100">
+      <div className="max-w-md w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+            Nom d'utilisateur
+          </label>
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="username"
+            type="text"
+            placeholder="Nom d'utilisateur"
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+            Email
+          </label>
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="email"
+            type="email"
+            placeholder="Email"
+          />
+        </div>
+        <div className="mb-6">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+            Mot de passe
+          </label>
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            id="password"
+            type="password"
+            placeholder="******************"
+          />
+        </div>
+        <div className="flex items-center justify-between">
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="button"
+          >
+            S'inscrire
+          </button>
         </div>
       </div>
-    </Container>
+    </div>
   );
 }
-
-const Container = styled.div`
-  position: relative;
-  .content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    height: 100vh;
-    width: 100vw;
-    display: grid;
-    grid-template-rows: 15vh 85vh;
-    .body {
-      gap: 1rem;
-      .text {
-        gap: 1rem;
-        text-align: center;
-        font-size: 2rem;
-        h1 {
-          padding: 0 25rem;
-        }
-      }
-      .form {
-        display: grid;
-        grid-template-columns: ${({ showPassword }) =>
-          showPassword ? "1fr 1fr" : "2fr 1fr"};
-        width: 60%;
-        input {
-          color: black;
-          border: none;
-          padding: 1.5rem;
-          font-size: 1.2rem;
-          border: 1px solid black;
-          &:focus {
-            outline: none;
-          }
-        }
-        button {
-          padding: 0.5rem 1rem;
-          background-color: #e50914;
-          border: none;
-          cursor: pointer;
-          color: white;
-          font-weight: bolder;
-          font-size: 1.05rem;
-        }
-      }
-      button {
-        padding: 0.5rem 1rem;
-        background-color: #e50914;
-        border: none;
-        cursor: pointer;
-        color: white;
-        border-radius: 0.2rem;
-        font-weight: bolder;
-        font-size: 1.05rem;
-      }
-    }
-  }
-`;
 
 export default Signup;
