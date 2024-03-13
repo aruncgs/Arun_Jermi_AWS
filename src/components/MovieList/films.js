@@ -20,7 +20,7 @@ const films = {
   ],
   Watchlist: [
     {
-      id: 1,
+      id: 3,
       title: "One Piece",
       imageUrl: "https://fr.web.img3.acsta.net/c_310_420/pictures/19/08/09/14/53/1842996.jpg",
       synopsis: "Luffy et son équipage naviguent à travers les océans à la recherche du trésor ultime, le One Piece, pour devenir le prochain Roi des Pirates.",
@@ -28,7 +28,7 @@ const films = {
       releaseDate: "1999", // Date du début de l'animation
     },
     {
-      id: 2,
+      id: 4,
       title: "Breaking Bad",
       imageUrl: "https://images.affiches-et-posters.com//albums/3/5539/medium/affiche-serie-breaking-bad-3509.jpg",
       synopsis: "Un professeur de chimie devenu fabricant de méthamphétamine pour sécuriser l'avenir financier de sa famille après avoir été diagnostiqué avec un cancer.",
@@ -39,7 +39,7 @@ const films = {
   ],
   Classiques: [
     {
-      id: 1,
+      id: 5,
       title: "Titanic",
       imageUrl: "https://images.affiches-et-posters.com//albums/3/4499/medium/affiche-film-titanic-2314.jpg",
       synopsis: "Une romance tragique se déroule à bord du RMS Titanic entre une passagère de première classe et un pauvre artiste, sur le malheureux voyage inaugural du navire.",
@@ -48,7 +48,7 @@ const films = {
     },
     // J'ai remarqué des duplicatas pour Dragon Ball avec le même ID et la même image. Vous pouvez ajouter des informations uniques pour chaque entrée ou ajuster selon les besoins réels.
     {
-      id: 2,
+      id: 6,
       title: "Dragon Ball",
       imageUrl: "https://www.yourdecoration.fr/cdn/shop/products/abystyle-abydco494-dragon-ball-cell-saga-poster-38x52cm_9a894b9e-96ef-4614-bbea-4a4582b8218b_500x.jpg?v=1698259886",
       synopsis: "Goku et ses amis défendent la Terre contre une variété de vilains, allant de guerriers intergalactiques à des créatures démoniaques quasi indestructibles.",

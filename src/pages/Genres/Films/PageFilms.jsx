@@ -30,7 +30,7 @@ function FilmsPage() {
         <section className="bg-red-700">
           <div className="container mx-auto py-6">
             <div className="ml-14">
-            <h1 className="text-white text-3xl font-bold">Films</h1>
+            <h1 className="text-white text-3xl font-semibold">Films</h1>
             <div className="flex overflow-x-auto py-4 space-x-4">
               {categories.map((category) => (
                 <button

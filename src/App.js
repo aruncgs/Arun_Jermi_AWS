@@ -9,6 +9,7 @@ import Accueil from "./pages/Accueil/Accueil";
 import QCM from "./pages/Divers/Formulaire";
 import Evenement from "./pages/Divers/Evenement";
 import Signup from "./pages/Inscription/Inscription";
+import MovieDetails from "./pages/Genres/Films/MovieDetails";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/qcm" element={<QCM />} />
           <Route path="/Evenement" element={<Evenement />} />
           <Route path="/Inscription" element={<Signup />} />
+          <Route path="/movie-detail/1" component={<MovieDetails />} />
         </Routes>
         {/* Vous pouvez ajouter plus de sections ou de contenu ici */}
     </Router>

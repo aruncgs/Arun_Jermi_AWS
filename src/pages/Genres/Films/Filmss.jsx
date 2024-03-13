@@ -1,27 +1,22 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // Importez useNavigate
 import Header from "../../../components/Header/MovieHeader";
 import Footer from "../../../components/Footer/Footer";
-import SearchComponent from "../../../components/NavigationBar/MovieSearch";
 import MovieCardSkeleton from "../../../components/MovieCard/MovieCardSkeleton";
 import filmsData from "../../../components/MovieList/films"; // Assurez-vous d'importer vos données de films correctement
-import MovieModal from "./MovieModal";  
 
-
-// Simuler des données de catégories pour l'exemple
-const categories = Object.keys(filmsData); // Utiliser les clés de votre objet films comme catégories
+const categories = Object.keys(filmsData);
 
 function FilmsPage() {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
   const [loading, setLoading] = useState(false);
   const [displayedFilms, setDisplayedFilms] = useState([]);
-  const [selectedFilm, setSelectedFilm] = useState(null);
+
+  const navigate = useNavigate(); // Utilisez useNavigate pour la navigation
 
   const handleFilmClick = (film) => {
-    setSelectedFilm(film);
-  };
-
-  const closeModal = () => {
-    setSelectedFilm(null);
+    // Utilisez navigate pour rediriger vers la page de détails du film
+    navigate(`/movie-detail/${film.id}`); // Assurez-vous que le chemin correspond à vos routes configurées
   };
 
   const handleCategoryClick = (category) => {
@@ -46,9 +41,9 @@ function FilmsPage() {
       <div className="flex-grow">
         <section className="bg-red-700">
           <div className="container mx-auto py-6">
-            <div className="ml-14">
-              <h1 className="text-white text-3xl font-bold ml-10">Films</h1>
-              <div className="flex overflow-x-auto py-6 space-x-4 ml-10">
+            <div className="ml-20">
+              <h1 className="text-white text-3xl font-bold ml-5">Films</h1>
+              <div className="flex overflow-x-auto py-6 space-x-4 ml-5">
                 {categories.map((category) => (
                   <button
                     key={category}
@@ -66,7 +61,7 @@ function FilmsPage() {
                   ))}
                 </div>
               ) : (
-                <div className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2 p-4 ml-8">
+                <div className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2 p-4">
                   {displayedFilms.map((film) => (
                     <div key={film.id} className="max-w-sm rounded overflow-hidden shadow-lg" onClick={() => handleFilmClick(film)}>
                       <img className="w-full" src={film.imageUrl} alt={film.title} />
@@ -80,7 +75,6 @@ function FilmsPage() {
                 </div>
               )}
             </div>
-            {selectedFilm && <MovieModal film={selectedFilm} onClose={closeModal} />}
           </div>
         </section>
       </div>

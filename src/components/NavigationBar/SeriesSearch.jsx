@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import films from "../MovieList/films"; // Assurez-vous que le chemin est correct
 
-const SearchComponent = () => {
+const SearchComponent = ({ isExpanded, setExpanded }) => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 
@@ -25,20 +25,24 @@ const SearchComponent = () => {
   };
 
   return (
-    <div className="flex flex-col items-end mr-10 relative">
+    <div className={`flex items-center transition-all duration-500 ease-in-out ${isExpanded ? 'w-full' : 'w-68'} relative mr-10`}>
       <input
         type="text"
         placeholder="Recherchez..."
         value={query}
         onChange={handleSearch}
-        className="p-1.5 w-68 bg-yellow-600 text-white border-2 border-yellow-700 rounded-md text-center focus:outline-none focus:ring-2 focus:ring-yellow-300 hover:bg-yellow-400 transition-colors duration-200 ease-in-out input-placeholder"
+        onFocus={() => setExpanded(true)}
+        className="p-1.5 bg-yellow-600 text-white border-2 border-yellow-700 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 hover:bg-yellow-600 transition-all duration-500 ease-in-out w-full"
       />
-      <div className="absolute mt-2 w-80 bg-yellow-700 text-white rounded-lg shadow-lg overflow-hidden z-10 top-full">
+      {isExpanded && (
+        <button onClick={() => setExpanded(false)} className="absolute right-0 text-2xl text-white mr-4">×</button>
+      )}
+      <div className={`absolute mt-2 w-80 bg-yellow-700 text-white rounded-lg shadow-lg overflow-hidden z-10 top-full ${!isExpanded ? 'hidden' : ''}`}>
         {query && results.length > 0 ? (
           results.map((film) => (
             <div
               key={film.id}
-              className="px-4 py-2 hover:bg-yellow-300 hover:text-yellow-700 cursor-pointer transition-colors"
+              className="px-4 py-2 hover:bg-yellow-400 hover:text-yellow-700 cursor-pointer transition-colors"
               onClick={() => handleFilmClick(film)}
             >
               {film.title}
